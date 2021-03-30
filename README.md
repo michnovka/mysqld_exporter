@@ -165,3 +165,21 @@ As a general rule of thumb, please try to create bug reports that are:
 -   *Specific.* Include as much detail as possible: which version, what environment, etc.
 -   *Unique.* Do not duplicate existing tickets.
 -   *Scoped to a Single Bug.* One bug per report.
+
+## Development notes.
+
+Before submiting a pull request, it is recommended you can run existing benchmarks and/or add new benchmarks as needed and run bechstat comparing main
+branch and the new branch. 
+This suggestion is to ensure we won't affect the exporter performace signigicantly.
+
+Documentation for benchstat can be located [here](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat) and there are [usage
+examples](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat#hdr-Example).
+
+### TODO
+In order to make benchmarking easier, we need to update the `Makefile` to:
+1. Add an `init` command to install/update benchstat (and posibly other tools).
+```
+GO111MODULE=on go get -u golang.org/x/perf/cmd/benchstat@latest
+```
+2. Add an `initial-benchmark` command
+3. Add a `benchmark-cmp` command that compares the output of the initial an current benchmarks. 
