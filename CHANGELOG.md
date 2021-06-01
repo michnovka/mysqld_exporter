@@ -1,3 +1,7 @@
+## 
+
+* PMM-8090 - Multi-request protection breaks metrics gathering (Thanks Francisco Miguel Biete @fmbiete)
+
 ## v0.10.0 / 2017-04-25
 
 BREAKING CHANGES:
